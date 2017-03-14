@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BlogAppComponent } from './blog-app.component';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
@@ -7,7 +7,7 @@ import { BlogArticleComponent } from './blog-article';
 
 export const ROUTER_CONFIG: Routes = [
   {
-    path: '', component: BlogAppComponent,
+    path: 'blog', component: BlogAppComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: '/blog/home' },
       { path: 'home', component: HomeComponent },
@@ -17,5 +17,3 @@ export const ROUTER_CONFIG: Routes = [
     ]
   }
 ];
-
-export const ROUTING = RouterModule.forChild(ROUTER_CONFIG);

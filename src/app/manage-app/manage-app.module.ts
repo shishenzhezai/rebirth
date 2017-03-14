@@ -1,5 +1,5 @@
-import { NgModule }           from '@angular/core';
-import { SharedModule }       from '../shared';
+import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared';
 
 import { ManageAppComponent } from './manage-app.component';
 import { ArticleSearchComponent } from './article-search';
@@ -11,16 +11,19 @@ import { ManageHomeComponent } from './manage-home';
 import { ManageNavbarComponent } from './manage-navbar';
 import { MdEditorComponent } from './md-editor';
 import { MdPreviewComponent } from './md-preview';
-import { RebirthRoleDirective } from 'rebirth-permission';
+import { RebirthPermissionModule } from 'rebirth-permission';
 
 import { LoginService } from './login';
 
-import { ROUTING } from './manage.routes';
+import { ROUTER_CONFIG } from './manage.routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     SharedModule,
-    ROUTING
+    RouterModule.forChild(ROUTER_CONFIG)
+    ,
+    RebirthPermissionModule.forRoot({ loginPage: '/manage/login' }),
   ],
   providers: [
     LoginService
@@ -36,7 +39,6 @@ import { ROUTING } from './manage.routes';
     ManageNavbarComponent,
     MdEditorComponent,
     MdPreviewComponent,
-    RebirthRoleDirective
   ]
 })
 export class ManageAppModule {

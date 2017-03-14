@@ -1,5 +1,5 @@
-import { NgModule }           from '@angular/core';
-import { SharedModule }       from '../shared';
+import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared';
 
 import { BlogAppComponent } from './blog-app.component';
 import { AboutComponent, AboutService } from './about';
@@ -14,12 +14,13 @@ import { JiaThisComponent } from './jia-this';
 import { QuestionComponent, QuestionService } from './question';
 import { UyanCommentComponent } from './uyan-comment';
 
-import { ROUTING } from './blog-app.routes';
+import { ROUTER_CONFIG } from './blog-app.routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     SharedModule,
-    ROUTING
+    RouterModule.forChild(ROUTER_CONFIG)
   ],
   providers: [
     QuestionService,

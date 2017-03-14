@@ -4,8 +4,9 @@ import { ViewContainerRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RebirthHttpProvider } from 'rebirth-http';
-import { LoadService } from './shared';
+import { LoadingService } from './core';
 import any = jasmine.any;
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('App', () => {
   beforeEach(() => {
@@ -17,9 +18,10 @@ describe('App', () => {
         AppComponent
       ],
       providers: [
+        { provide: APP_BASE_HREF, useValue: '/' },
         { provide: ViewContainerRef, useValue: {} },
         RebirthHttpProvider,
-        LoadService,
+        LoadingService,
         ...REBIRTH_STORAGE_PROVIDERS
       ]
     });
@@ -27,9 +29,9 @@ describe('App', () => {
   });
 
   it('should init http interceptors', inject([], () => {
-    let fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(AppComponent);
     fixture.whenStable().then(() => {
-      let element = fixture.nativeElement;
+      const element = fixture.nativeElement;
       fixture.detectChanges();
 
       expect(element.querySelectorAll('router-outlet').length).toEqual(1);

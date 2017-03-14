@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { ArticleItemComponent } from '../article-item';
-import { PagerComponent, ArticleService, SearchResult, Article, RebirthWindow } from '../../shared';
-import { environment } from 'environments';
+import { ArticleService, SearchResult, Article, RebirthWindow } from '../../core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'article-list',
@@ -9,7 +8,7 @@ import { environment } from 'environments';
   templateUrl: './article-list.html'
 })
 export class ArticleListComponent implements OnInit {
-  private article: SearchResult<Article>;
+  article: SearchResult<Article>;
 
   constructor(private articleService: ArticleService, private elmRef: ElementRef, private rebirthWindow: RebirthWindow) {
 

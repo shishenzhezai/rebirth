@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { QuestionService } from './question.service';
 import { QuestionModel } from './question.model';
-import  { LoadService } from '../../shared';
+import { LoadingService } from '../../core/loading/loading.service';
 
 @Component({
   selector: 'question',
@@ -9,11 +9,11 @@ import  { LoadService } from '../../shared';
   templateUrl: './question.html'
 })
 export class QuestionComponent implements OnInit {
-  private questions: QuestionModel[];
-  private error: any;
+  questions: QuestionModel[];
+  error: any;
 
   constructor(private questionService: QuestionService,
-              private  loadService: LoadService,
+              private  loadService: LoadingService,
               private viewContainer: ViewContainerRef) {
 
   }
@@ -28,6 +28,7 @@ export class QuestionComponent implements OnInit {
         (error) => {
           this.error = error;
         },
-        () => this.loadService.hide());
+        () => this.loadService.hide()
+      );
   }
 }

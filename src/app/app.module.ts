@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
-import { ROUTING } from './app.routes';
+import { ROUTER_CONFIG } from './app.routes';
+import { BlogAppModule } from './blog-app';
+import { ManageAppModule } from './manage-app';
 // App is our top level component
 import { AppComponent } from './app.component';
+import { CoreModule } from './core';
 import { SharedModule } from './shared';
-
+import { RouterModule } from '@angular/router';
 // Application wide providers
 const APP_PROVIDERS = [];
 
@@ -19,14 +21,16 @@ const APP_PROVIDERS = [];
 @NgModule({
   imports: [
     BrowserModule,
-    SharedModule.forRoot({ permission: { loginPage: '/manage/login' } }),
-    ROUTING
+    CoreModule,
+    SharedModule,
+    RouterModule.forRoot(ROUTER_CONFIG),
+    BlogAppModule,
+    ManageAppModule
   ],
   declarations: [
     AppComponent
   ],
   providers: [
-    ...ENV_PROVIDERS,
     ...APP_PROVIDERS
   ],
   bootstrap: [

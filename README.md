@@ -1,37 +1,46 @@
-@rebirth/rebirth([![Build Status](https://travis-ci.org/greengerong/rebirth.svg?branch=master)](https://travis-ci.org/greengerong/rebirth))
+# @rebirth/rebirth
+
+[![Build Status](https://travis-ci.org/greengerong/rebirth.svg?branch=master)](https://travis-ci.org/greengerong/rebirth)
+[![dependcy](https://david-dm.org/greengerong/rebirth.svg)](https://david-dm.org/greengerong/rebirth)
+[![dev dependcy](https://david-dm.org/greengerong/rebirth/dev-status.svg)](https://david-dm.org/greengerong/rebirth?type=dev)
+
 ==================
 
 [![破狼logo](http://images2015.cnblogs.com/blog/63184/201607/63184-20160730102027700-792274919.png)](http://www.cnblogs.com/whitewolf/)
 
-GreenGerong(破狼) blog with Angular2. 
+GreenGerong(破狼) blog with Angular2.  Online link [https://greengerong.github.io/rebirth/blog/home](https://greengerong.github.io/rebirth/blog/home).
+
+## Links
+
+
+* [Web version rebirth: https://github.com/greengerong/rebirth](https://github.com/greengerong/rebirth)
+* [Ionic2 version rebirth: https://github.com/greengerong/rebirth-ionic2](https://github.com/greengerong/rebirth-ionic2)
+* [Nativescript version rebirth: https://github.com/greengerong/rebirth-nativescript](https://github.com/greengerong/rebirth-nativescript)
+
+
 
 ## How to build this project?
 
 ### setup project
 
 * Install Nodejs( v5 or v6)
-* `npm install -g gulp-cli`
+* `npm install -g angular-cli@latest`
 * `npm install`
 
 ### run project
 
-* development: `npm run dev`
-* production: `npm run prod`
+* development: `npm run jit` 或 `npm run aot`
+* production: `ng build --prod`
 * test: `npm test`
-* debug test: `gulp karma:debug`
-* build development: `npm run build`
-* build production: `npm run build:prod`
+* angular-cli command
 
 ## main dependency
 
-* gulp: It help use to manage all the plugin.
-* webpack: This is main build plugin.
-* awesome-typescript-loader: webpack typescript loader
-* postcss & sass
+* angular-cli: Angular2 cli tool.
+* sass
 * karma
 * tslint & codelyzer
 * typescript & @types
-* fontgen-loader: icon font
 * ...
 
 ## My front end WeChat

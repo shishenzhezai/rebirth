@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, ElementRef, Renderer } from '@angular/core';
-import { RebirthWindow } from '../../shared';
+import { RebirthWindow } from '../../core';
 
 @Component({
   selector: 'uyan-comment',
@@ -7,7 +7,7 @@ import { RebirthWindow } from '../../shared';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UyanCommentComponent implements OnInit {
-  private static UYAN_URL: string = 'http://v2.uyan.cc/code/uyan.js?uid=1893648';
+  private static UYAN_URL = 'http://v2.uyan.cc/code/uyan.js?uid=1893648';
 
   constructor(private elmRef: ElementRef, private renderer: Renderer, private rebirthWindow: RebirthWindow) {
 

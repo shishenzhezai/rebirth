@@ -1,0 +1,8 @@
+{
+  "baseUrl": "/",
+  "env": "prod",
+  "deploy": "github",
+  "api": {
+    "host": "http://greengerong.com/rebirth/assets/source/"
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AboutService } from './about.service';
-import { Article } from '../../shared';
+import { Article } from '../../core';
 
 @Component({
   selector: 'about',
@@ -8,7 +8,7 @@ import { Article } from '../../shared';
   templateUrl: './about.html'
 })
 export class AboutComponent implements OnInit {
-  private article: Article;
+  article: Article;
 
   constructor(private aboutService: AboutService) {
 
